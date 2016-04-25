@@ -19,12 +19,21 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
 public class GoogleSearchTest {
 
     @Test
-    public void testSearchAndFollowLink() {
+    public void testSearch() {
 
         driver.get("http://google.com/ncr");
         driver.findElement(By.name("q")).sendKeys("Selenium automates browsers" + Keys.ENTER);
         wait.until(sizeOf(By.cssSelector(list), 10));
         wait.until(textToBePresentInElementLocated(By.cssSelector(list + ":nth-child(1)"), "Selenium automates browsers"));
+
+    }
+
+    @Test
+    public void testFollowLink() {
+
+        driver.get("http://google.com/ncr");
+        driver.findElement(By.name("q")).sendKeys("Selenium automates browsers" + Keys.ENTER);
+        wait.until(sizeOf(By.cssSelector(list), 10));
         followNthLink(1);
         wait.until(urlContains("http://www.seleniumhq.org/"));
     }
