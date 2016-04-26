@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static main.CustomConditions.*;
-import static main.CustomConditions.sizeOf;
+import static conditions.CustomConditions.minimumSizeOf;
+import static conditions.CustomConditions.sizeOf;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.urlContains;
 /**
